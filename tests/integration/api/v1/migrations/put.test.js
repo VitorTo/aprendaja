@@ -1,11 +1,5 @@
-const URL_BASE = "http://localhost:3000";
-
-function concatURL(path) {
-  return `${URL_BASE}${path}`;
-}
-
 test("PUT MIGRATIONS ENDPOINT- [405]", async () => {
-  const res2 = await fetch(concatURL("/api/v1/migrations"), {
+  const res2 = await fetch("http://localhost:3000/api/v1/migrations", {
     method: "PUT",
   });
   const res2Body = await res2.json();
@@ -15,7 +9,7 @@ test("PUT MIGRATIONS ENDPOINT- [405]", async () => {
 });
 
 test("CHECK CONNECTIONS BD - [1]", async () => {
-  const res = await fetch(concatURL("/api/v1/status"));
+  const res = await fetch("http://localhost:3000/api/v1/status");
   const resBody = await res.json();
 
   expect(res.status).toBe(200);
