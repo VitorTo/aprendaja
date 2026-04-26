@@ -1,3 +1,9 @@
+import orchestrator from "tests/orchestrator.js";
+
+beforeAll(async () => {
+  await orchestrator.waitForAllServicesToBeReady();
+});
+
 test("PUT MIGRATIONS ENDPOINT- [405]", async () => {
   const res2 = await fetch("http://localhost:3000/api/v1/migrations", {
     method: "PUT",

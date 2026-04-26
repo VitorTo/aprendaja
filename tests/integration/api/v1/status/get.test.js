@@ -1,3 +1,9 @@
+import orchestrator from "tests/orchestrator.js";
+
+beforeAll(async () => {
+  await orchestrator.waitForAllServicesToBeReady();
+});
+
 test("GET STATUS ENDPOINT", async () => {
   const res = await fetch("http://localhost:3000/api/v1/status");
   const resBody = await res.json();
