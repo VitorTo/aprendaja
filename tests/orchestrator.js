@@ -18,6 +18,8 @@ async function waitForAllServicesToBeReady() {
   }
 }
 
-export default {
+const orchestrator = {
   waitForAllServicesToBeReady,
 };
+
+export default orchestrator;
